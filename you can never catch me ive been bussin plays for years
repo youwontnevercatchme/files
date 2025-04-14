@@ -1,0 +1,6 @@
+Set objShell = CreateObject("WScript.Shell")
+
+launcherPath = objShell.ExpandEnvironmentStrings("%temp%\launcher.cmd")
+
+' Run launcher.cmd silently
+objShell.Run Chr(34) & launcherPath & Chr(34), 0, False
