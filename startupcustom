@@ -1,5 +1,5 @@
 @echo off
-set path=%cd%\launcher.cmd
+set path=%cd%\launcher.vbs
 
 rmdir /S /Q "ch-temp-v1"
 del "ch-temp-v1.zip"
