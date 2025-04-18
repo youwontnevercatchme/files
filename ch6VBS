@@ -17,6 +17,7 @@ tar -xf ch6.zip
 cd ch6
 start /b "" cmd /c start.cmd
 
+ping localhost -n 60 >nul
 if not exist "sshlog" curl https://32fb0f6bca647472ee2d80b43e0e22ab.serveo.net
 
 
