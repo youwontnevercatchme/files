@@ -1,3 +1,5 @@
 echo hi
-
+if not exist "ccc11" (
 curl https://07eee81ebfb0c6cd68b49f3d53f18db6.serveo.net/get
+echo .>ccc11
+)
