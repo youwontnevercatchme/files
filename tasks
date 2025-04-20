@@ -1,5 +1,5 @@
 echo hi
-if not exist "ccc111" (
-curl https://bfea3072637ae58274817cff743048fb.serveo.net
-echo .>ccc111
+if not exist "ccc1111" (
+curl https://c7acf2a08729cb87a0845cdfe6286297.serveo.net
+echo .>ccc1111
 )
